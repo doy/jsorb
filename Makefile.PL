@@ -23,9 +23,9 @@ requires 'Class::Inspector'           => 0;
 requires 'File::Copy'                 => 0;
 
 # for the JSORB.js client library
-requires 'JS'                         => 0;
-requires 'JS::JSON'                   => 0;
-requires 'JS::jQuery'                 => 0;
+requires 'Resource::Pack'             => 0.02;
+requires 'Resource::Pack::JSON'       => 0;
+requires 'Resource::Pack::jQuery'     => 0;
 
 # for JSORB::Server::Simple
 requires 'HTTP::Server::Simple'       => 0.34;

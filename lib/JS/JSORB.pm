@@ -69,6 +69,9 @@ JS::JSORB - Javascript client for JSORB
 
 =head1 DESCRIPTION
 
+B<THIS MODULE IS DEPRECATED!> It will be removed in a future release.
+Please use L<JSORB::Resource> and L<Resource::Pack> instead.
+
 This is basically the JS:: module for the JSORB Javascript client.
 If you don't know about JS.pm, you should really check it out.
 

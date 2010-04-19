@@ -2,6 +2,9 @@ package JSORB::Resource;
 use Moose;
 use Resource::Pack;
 
+use Resource::Pack::jQuery;
+use Resource::Pack::JSON;
+
 extends 'Resource::Pack::Resource';
 
 has '+name' => (default => 'jsorb');
@@ -13,7 +16,15 @@ sub BUILD {
         install_from(Path::Class::File->new(__FILE__)->parent
                                                      ->parent
                                                      ->subdir('JS'));
-        file js => 'JSORB.js';
+        resource(Resource::Pack::jQuery->new(use_bundled => 1));
+        resource(Resource::Pack::JSON->new(use_bundled => 1));
+        file js => (
+            file => 'JSORB.js',
+            dependencies => {
+                jquery => depends_on('jquery/js'),
+                json   => depends_on('json/js'),
+            },
+        );
     };
 }
 
